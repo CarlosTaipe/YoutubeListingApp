@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">YoutubeListingApp</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Paste BOTH strings as required -->
+    <string name="back4app_app_id">eM4MQq8BLzfxZY3D3Z0ytRdIqAsh6I8hpOnbjzBK</string>
+    <string name="back4app_client_key">LnM0mVWQ2tVbkUvvoHoWpKd2RxSoX73Kd4sT9Rxf</string>
+
 </resources>
