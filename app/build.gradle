@@ -78,7 +78,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-//    Parse
+    // Parse
     implementation "com.github.parse-community.Parse-SDK-Android:parse:2.0.2"
+
+    // Timber logs
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 
 }
