@@ -1,23 +1,27 @@
 package com.cdta.youtubelistingapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.cdta.youtubelistingapp.adapter.CategoryAdapter
 import com.cdta.youtubelistingapp.model.Category
 import com.parse.ParseObject
 import com.parse.ParseQuery
 import kotlinx.android.synthetic.main.activity_main.*
-import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
     val TAG = "BrowserCategories:"
     var categoryList = ArrayList<Category>()
+    var adp = CategoryAdapter(categoryList)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        category_content.layoutManager=LinearLayoutManager(this)
+        category_content.adapter = adp
         loadCategories()
     }
 
@@ -38,6 +42,8 @@ class MainActivity : AppCompatActivity() {
                                 category.getParseFile("picture")
                             )
                         )
+                        adp.notifyDataSetChanged()
+
                         Log.d(TAG, "$TAG: categoryList content:  " + categoryList.toString())
                         var nameOfCategories = ""
                         for (c in categoryList){

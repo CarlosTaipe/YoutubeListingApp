@@ -8,7 +8,8 @@ import com.cdta.youtubelistingapp.R
 import com.cdta.youtubelistingapp.model.Category
 import kotlinx.android.synthetic.main.item_category.view.*
 
-class CategoryAdapter(var list:ArrayList<Category>):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CategoryAdapter(var list:ArrayList<Category>):
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         var view=LayoutInflater.from(parent.context).inflate(R.layout.item_category,parent,false)
         return CategoryViewHolder(view)
