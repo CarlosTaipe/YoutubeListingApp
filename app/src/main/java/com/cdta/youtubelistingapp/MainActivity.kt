@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
                         for (c in categoryList){
                             nameOfCategories+=c.name+"\n"
                         }
-                        category_list.text = nameOfCategories
                     }
                 } else {
                     //there is no categories in the app backend
