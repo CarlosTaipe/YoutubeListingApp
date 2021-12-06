@@ -2,6 +2,7 @@ package com.cdta.youtubelistingapp
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cdta.youtubelistingapp.adapter.CategoryAdapter
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadCategories() {
         val query = ParseQuery<ParseObject>("Category")
         query.orderByAscending("name")
+//        query.whereEqualTo("name","Java")
         query.findInBackground { list, e ->
             if (e == null) {
                 //No error occured
@@ -52,12 +54,24 @@ class MainActivity : AppCompatActivity() {
                     }
                 } else {
                     //there is no categories in the app backend
-                    Log.d(TAG, "$TAG: There is no categories in the app backed")
+                    Log.d(TAG, "$TAG: There is no categories in the app backend")
+                    error_category.visibility = View.VISIBLE
+                    error_message.text=getString(R.string.error_load_category)
                 }
             } else {
                 //there is error occured
                 Log.d(TAG, "$TAG: There is an error occured " + e.message)
+                error_category.visibility = View.VISIBLE
+                refresh.visibility = View.VISIBLE
+                error_message.text=getString(R.string.error_network_message)
             }
         }
+    }
+
+    fun refresh_category_clicked(v:View){
+        error_category.visibility = View.GONE
+        refresh.visibility = View.GONE
+        error_message.text=""
+        loadCategories()
     }
 }

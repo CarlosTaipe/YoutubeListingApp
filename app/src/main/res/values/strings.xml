@@ -6,5 +6,8 @@
     <!-- Paste BOTH strings as required -->
     <string name="back4app_app_id">eM4MQq8BLzfxZY3D3Z0ytRdIqAsh6I8hpOnbjzBK</string>
     <string name="back4app_client_key">LnM0mVWQ2tVbkUvvoHoWpKd2RxSoX73Kd4sT9Rxf</string>
+    <string name="error_load_category">There is no categories in the app backend</string>
+    <string name="error_network_message">There is an error encountered. Please check your internet connection test</string>
+    <string name="refresh">Reload</string>
 
 </resources>
