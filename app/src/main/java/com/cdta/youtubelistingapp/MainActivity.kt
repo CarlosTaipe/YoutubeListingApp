@@ -27,10 +27,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadCategories() {
+        progress_bar.visibility = View.VISIBLE
         val query = ParseQuery<ParseObject>("Category")
         query.orderByAscending("name")
 //        query.whereEqualTo("name","Java")
         query.findInBackground { list, e ->
+            progress_bar.visibility = View.GONE
             if (e == null) {
                 //No error occured
                 Log.d(TAG, "$TAG: No error ocurred when running the query")

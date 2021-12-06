@@ -9,5 +9,6 @@
     <string name="error_load_category">There is no categories in the app backend</string>
     <string name="error_network_message">There is an error encountered. Please check your internet connection test</string>
     <string name="refresh">Reload</string>
+    <string name="loading_message">Loading List Video</string>
 
 </resources>
