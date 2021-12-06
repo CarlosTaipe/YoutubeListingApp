@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadCategories(){
         val query = ParseQuery<ParseObject>("Category")
+        query.orderByAscending("name")
         query.findInBackground{list, e->
             if (e==null){
                 //No error occured
