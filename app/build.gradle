@@ -81,6 +81,9 @@ dependencies {
     // Parse
     implementation "com.github.parse-community.Parse-SDK-Android:parse:2.0.2"
 
+    //Picasso to Show Image
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     // Timber logs
     implementation 'com.jakewharton.timber:timber:4.7.1'
 

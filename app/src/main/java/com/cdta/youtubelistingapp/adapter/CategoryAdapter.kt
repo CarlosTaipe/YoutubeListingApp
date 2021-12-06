@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cdta.youtubelistingapp.R
 import com.cdta.youtubelistingapp.model.Category
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_category.view.*
 
 class CategoryAdapter(var list:ArrayList<Category>):
@@ -30,6 +31,10 @@ class CategoryAdapter(var list:ArrayList<Category>):
             //link category name to textView
             cat_name.text=category.name
             //link category image to imageView
+            if (category.picture!=null){
+                var pictureURL= category.picture?.url
+                Picasso.get().load(pictureURL).into(cat_image)
+            }
         }
     }
 }
