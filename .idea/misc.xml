@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Carlos_David/AndroidStudioProjects/YoutubeListingApp/app/src/main/res/layout/activity_main.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/Carlos_David/AndroidStudioProjects/YoutubeListingApp/app/src/main/res/layout/activity_video_list.xml" value="0.19635416666666666" />
         <entry key="..\:/Users/Carlos_David/AndroidStudioProjects/YoutubeListingApp/app/src/main/res/layout/item_category.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/Carlos_David/AndroidStudioProjects/YoutubeListingApp/app/src/main/res/layout/item_video_list.xml" value="0.19635416666666666" />
       </map>
     </option>
   </component>

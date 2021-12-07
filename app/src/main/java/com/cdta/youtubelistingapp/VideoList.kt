@@ -1,15 +1,12 @@
 package com.cdta.youtubelistingapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
-import com.cdta.youtubelistingapp.model.Category
+import androidx.appcompat.app.AppCompatActivity
 import com.cdta.youtubelistingapp.model.Video
 import com.parse.ParseObject
 import com.parse.ParseQuery
-import kotlinx.android.synthetic.main.activity_main.*
 
 class VideoList : AppCompatActivity() {
 

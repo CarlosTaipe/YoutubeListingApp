@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cdta.youtubelistingapp.R
 import com.cdta.youtubelistingapp.model.Category
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_category.view.*
+import kotlinx.android.synthetic.main.item_category_list.view.*
 
 class CategoryAdapter(var list:ArrayList<Category>, val clickListener:(Category)->Unit):
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        var view=LayoutInflater.from(parent.context).inflate(R.layout.item_category,parent,false)
+        var view=LayoutInflater.from(parent.context).inflate(R.layout.item_category_list,parent,false)
         return CategoryViewHolder(view)
     }
 
