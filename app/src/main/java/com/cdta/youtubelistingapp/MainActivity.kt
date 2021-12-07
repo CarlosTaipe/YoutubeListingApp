@@ -3,6 +3,7 @@ package com.cdta.youtubelistingapp
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cdta.youtubelistingapp.adapter.CategoryAdapter
@@ -15,13 +16,15 @@ class MainActivity : AppCompatActivity() {
 
     val TAG = "BrowserCategories:"
     var categoryList = ArrayList<Category>()
-    var adp = CategoryAdapter(categoryList)
+    var adp = CategoryAdapter(
+        categoryList, { categoryItem: Category -> clickListener(categoryItem) }
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        category_content.layoutManager=LinearLayoutManager(this)
+        category_content.layoutManager = LinearLayoutManager(this)
         category_content.adapter = adp
         loadCategories()
     }
@@ -50,30 +53,38 @@ class MainActivity : AppCompatActivity() {
 
                         Log.d(TAG, "$TAG: categoryList content:  " + categoryList.toString())
                         var nameOfCategories = ""
-                        for (c in categoryList){
-                            nameOfCategories+=c.name+"\n"
+                        for (c in categoryList) {
+                            nameOfCategories += c.name + "\n"
                         }
                     }
                 } else {
                     //there is no categories in the app backend
                     Log.d(TAG, "$TAG: There is no categories in the app backend")
                     error_category.visibility = View.VISIBLE
-                    error_message.text=getString(R.string.error_load_category)
+                    error_message.text = getString(R.string.error_load_category)
                 }
             } else {
                 //there is error occured
                 Log.d(TAG, "$TAG: There is an error occured " + e.message)
                 error_category.visibility = View.VISIBLE
                 refresh.visibility = View.VISIBLE
-                error_message.text=getString(R.string.error_network_message)
+                error_message.text = getString(R.string.error_network_message)
             }
         }
     }
 
-    fun refresh_category_clicked(v:View){
+    fun refresh_category_clicked(v: View) {
         error_category.visibility = View.GONE
         refresh.visibility = View.GONE
-        error_message.text=""
+        error_message.text = ""
         loadCategories()
+    }
+
+    fun clickListener(category: Category) {
+        Toast.makeText(
+            this,
+            "Category Name: " + category.name,
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }
