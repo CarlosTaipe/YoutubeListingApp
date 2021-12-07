@@ -16,9 +16,8 @@ class MainActivity : AppCompatActivity() {
 
     val TAG = "BrowserCategories:"
     var categoryList = ArrayList<Category>()
-    var adp = CategoryAdapter(
-        categoryList, { categoryItem: Category -> clickListener(categoryItem) }
-    )
+    var adp = CategoryAdapter(categoryList)
+    { categoryItem: Category -> clickListener(categoryItem) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,14 +32,12 @@ class MainActivity : AppCompatActivity() {
         progress_bar.visibility = View.VISIBLE
         val query = ParseQuery<ParseObject>("Category")
         query.orderByAscending("name")
-//        query.whereEqualTo("name","Java")
         query.findInBackground { list, e ->
             progress_bar.visibility = View.GONE
             if (e == null) {
-                //No error occured
-                Log.d(TAG, "$TAG: No error ocurred when running the query")
+                Log.d(TAG, "$TAG: No error occurred when running the query")
                 if (list.size > 0) {
-                    //there is categories retrived
+                    //there is categories retrieved
                     Log.d(TAG, "$TAG: There is " + list.size + "categories retrieved")
                     for (category in list) {
                         categoryList.add(
@@ -65,8 +62,8 @@ class MainActivity : AppCompatActivity() {
                     error_message.text = getString(R.string.error_load_category)
                 }
             } else {
-                //there is error occured
-                Log.d(TAG, "$TAG: There is an error occured " + e.message)
+                //there is error occurred
+                Log.d(TAG, "$TAG: There is an error occurred " + e.message)
                 error_category.visibility = View.VISIBLE
                 refresh.visibility = View.VISIBLE
                 error_message.text = getString(R.string.error_network_message)
