@@ -1,17 +1,25 @@
 package com.cdta.youtubelistingapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.cdta.youtubelistingapp.adapter.VideoAdapter
+import com.cdta.youtubelistingapp.model.Category
 import com.cdta.youtubelistingapp.model.Video
 import com.parse.ParseObject
 import com.parse.ParseQuery
+import kotlinx.android.synthetic.main.activity_video_list.*
 
 class VideoList : AppCompatActivity() {
 
     val TAG = "VideoList:"
     var videoList = ArrayList<Video>()
+    var adp = VideoAdapter(
+        videoList, { videoItem: Video -> clickListener(videoItem) }
+    )
 
     var selectedCategoryObjectId = ""
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +32,9 @@ class VideoList : AppCompatActivity() {
             "Selected video category object Id" + selectedCategoryObjectId,
             Toast.LENGTH_LONG
         ).show()
+
+        video_content.layoutManager = LinearLayoutManager(this)
+        video_content.adapter=adp
         Log.d(TAG, "$TAG: before loading videos")
         loadVideos()
     }
@@ -53,7 +64,7 @@ class VideoList : AppCompatActivity() {
                             )
                         )
                     }
-//                        adp.notifyDataSetChanged()
+                        adp.notifyDataSetChanged()
 
                     Log.d(TAG, "$TAG: videosList content:  " + videoList.toString())
                     var nameOfVideos = ""
@@ -76,6 +87,12 @@ class VideoList : AppCompatActivity() {
 //                error_message.text = getString(R.string.error_network_message)
             }
         }
+    }
+
+    fun clickListener(video: Video) {
+        val intent = Intent(this, PlayVideo::class.java)
+        intent.putExtra("youtubeId", video.youtubeId)
+        startActivity(intent)
     }
 
 }
