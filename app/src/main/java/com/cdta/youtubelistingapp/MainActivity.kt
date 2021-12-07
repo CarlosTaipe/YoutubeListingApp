@@ -1,5 +1,6 @@
 package com.cdta.youtubelistingapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -81,10 +82,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickListener(category: Category) {
-        Toast.makeText(
-            this,
-            "Category Name: " + category.name,
-            Toast.LENGTH_SHORT
-        ).show()
+        val intent = Intent(this, VideoList:: class.java)
+        intent.putExtra("selectedCategoryName",category.name)
+        intent.putExtra("selectedCategoryObjectId", category.objectId)
+        startActivity(intent)
     }
 }
