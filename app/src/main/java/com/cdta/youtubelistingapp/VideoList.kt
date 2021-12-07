@@ -51,10 +51,10 @@ class VideoList : AppCompatActivity() {
         query.findInBackground { list, e ->
             progress_bar.visibility = View.GONE
             if (e == null) {
-                //No error occured
-                Log.d(TAG, "$TAG: No error occured when running the query: list size " + list.size)
+                //No error occurred
+                Log.d(TAG, "$TAG: No error occurred when running the query: list size " + list.size)
                 if (list.size > 0) {
-                    //there is categories retrived
+                    //there is categories retrieved
                     Log.d(TAG, "$TAG: There is " + list.size + "videos retrieved")
                     for (video in list) {
                         videoList.add(
@@ -82,7 +82,7 @@ class VideoList : AppCompatActivity() {
                 }
             } else {
                 //there is error occured
-                Log.d(TAG, "$TAG: There is an error occured " + e.message)
+                Log.d(TAG, "$TAG: There is an error occurred " + e.message)
                 error_video_list.visibility = View.VISIBLE
                 refresh.visibility = View.VISIBLE
                 error_message.text = getString(R.string.error_network_message)
@@ -100,6 +100,7 @@ class VideoList : AppCompatActivity() {
     fun clickListener(video: Video) {
         val intent = Intent(this, PlayVideo::class.java)
         intent.putExtra("youtubeId", video.youtubeId)
+        Log.d(TAG, "$TAG: Clicked on video whit Id " + video.youtubeId)
         startActivity(intent)
     }
 

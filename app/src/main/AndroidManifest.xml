@@ -15,10 +15,11 @@
         android:theme="@style/Theme.YoutubeListingApp">
         <activity
             android:name=".PlayVideo"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".VideoList"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
