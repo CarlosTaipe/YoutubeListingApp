@@ -50,13 +50,14 @@ class MainActivity : AppCompatActivity() {
                                 category.getParseFile("picture")
                             )
                         )
-                        adp.notifyDataSetChanged()
+                    }
 
-                        Log.d(TAG, "$TAG: categoryList content:  " + categoryList.toString())
-                        var nameOfCategories = ""
-                        for (c in categoryList) {
-                            nameOfCategories += c.name + "\n"
-                        }
+                    adp.notifyDataSetChanged()
+
+                    Log.d(TAG, "$TAG: categoryList content:  " + categoryList.toString())
+                    var nameOfCategories = ""
+                    for (c in categoryList) {
+                        nameOfCategories += c.name + "\n"
                     }
                 } else {
                     //there is no categories in the app backend
@@ -82,8 +83,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickListener(category: Category) {
-        val intent = Intent(this, VideoList:: class.java)
-        intent.putExtra("selectedCategoryName",category.name)
+        val intent = Intent(this, VideoList::class.java)
+        intent.putExtra("selectedCategoryName", category.name)
         intent.putExtra("selectedCategoryObjectId", category.objectId)
         startActivity(intent)
     }
