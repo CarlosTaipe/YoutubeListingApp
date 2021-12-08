@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".VideoList">
 
     <LinearLayout
-        android:id="@+id/error_category"
+        android:id="@+id/error_video_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -26,7 +27,7 @@
             android:id="@+id/refresh"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:onClick="refresh_category_clicked"
+            android:onClick="refresh_video_list_clicked"
             android:text="@string/refresh"
             android:visibility="gone" />
 
@@ -44,14 +45,14 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:text="@string/loading_category_message"
+            android:text="@string/loading_video_list_message"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/category_content"
+        android:id="@+id/video_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp" />
