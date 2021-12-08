@@ -44,7 +44,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:text="@string/loading_message"
+            android:text="@string/loading_category_message"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

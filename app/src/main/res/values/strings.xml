@@ -10,6 +10,8 @@
     <string name="error_load_video_list">There is no video list in the app backend</string>
     <string name="error_network_message">There is an error encountered. Please check your internet connection test</string>
     <string name="refresh">Reload</string>
-    <string name="loading_message">Loading Video List </string>
+    <string name="loading_category_message">Loading Category List </string>
+    <string name="loading_video_list_message">Loading Video List </string>
+    <string name="loading_youtube_video_message">Loading Video to Playing</string>
 
 </resources>
