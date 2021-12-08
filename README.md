@@ -1,5 +1,5 @@
-# <img src="./imgs/video_list.png" alt="icon list" width="25" height="25"> YoutubeListingApp
-Youtube Listing App whit Kotlin &amp; Parse
+# <img src="./imgs/video_list.png" alt="icon list" width="35" height="30"> YoutubeListingApp
+Youtube Listing App is an Android Application written all in Kotlin &amp; Parse
 
 
 ##Changelog
