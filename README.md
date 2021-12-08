@@ -5,9 +5,9 @@ shown in the app are available on Youtube
 
 ## Preview
 
-<img src="./imgs/main.PNG" alt="Category List" width="50%">
+<img src="./imgs/main.PNG" alt="Category List" width="50" height="70">
 
-<img src="./imgs/youtube_video_list.PNG" alt="Video List Of Category" width="50%">
+<img src="./imgs/youtube_video_list.PNG" alt="Video List Of Category" width="50" height="70">
 
 ## Changelog
 
