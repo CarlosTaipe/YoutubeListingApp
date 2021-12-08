@@ -1,6 +1,6 @@
 # YoutubeListingApp
-Youtube Listing App whit Kotlin &amp; Parse
-Arch: MVC 
+<img src="./imgs/video_list.png" alt="icon list" width="25%"> Youtube Listing App whit Kotlin &amp; Parse
+
 
 ##Changelog
 
