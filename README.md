@@ -39,8 +39,7 @@ ___
 
 ## Changelog
 
-### Version 1.0.0 08/12/2021
-
+### Version 1.0.0 07/12/2021 
 Added:
 
 - List Category Video
