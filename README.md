@@ -1,13 +1,30 @@
-# <img src="./imgs/video_list.png" alt="icon list" width="35" height="30"> Youtube Listing App
+# <img src="./imgs/video_list.png" alt="icon list" width="40" height="35"> Youtube Listing App
 
 Youtube Listing App is an Android Application written all in Kotlin &amp; Parse, the list of videos
 shown in the app are available on Youtube
 
 ## Preview
+<img src="./imgs/main.PNG" alt="Category List" width="30%">
+<img src="./imgs/youtube_video_list.PNG" alt="Video List Of Category" width="30%">
 
-<img src="./imgs/main.PNG" alt="Category List" width="50" height="70">
+## Features
 
-<img src="./imgs/youtube_video_list.PNG" alt="Video List Of Category" width="50" height="70">
+- MVC Architecture
+- Cloud based back-end (Parse Server)
+
+## Current work
+
+Status of current work will be implemented soon...
+
+- Adding DataBinding
+- Adding ViewModel instead of Controllers
+- Adding Navigation Component
+- Using CLEAN structure modules: domain + presentation(app) 
+- Adding Use Cases
+- Adding RXJava
+- Adding Lottie for animations
+- Adding a MockServer!
+- Adding security parse server
 
 ## Changelog
 
