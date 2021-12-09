@@ -1,7 +1,7 @@
 # <img src="./imgs/video_list.png" alt="icon list" width="40" height="35"> Youtube Video Listing App
 
-The Youtube video listing application is written all in Kotlin, its database is based on Back4App (
-Parse), the list of videos shown in the app are available on Youtube
+The Youtube video listing application is written all in Kotlin, its database is based on Back4App 
+(Parse), the list of videos shown in the app are available on Youtube
 
 ## Preview
 
